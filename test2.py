@@ -2,6 +2,7 @@ import json
 import urllib
 import requests
 import time
+import pyperclip
 
 z = {}
 xiaoxi = []
@@ -35,6 +36,7 @@ if __name__ == "__main__":
             if j[content]["text"] not in posttext:
                 xiaoxi.append(j[content])
                 posttext.add(j[content]["text"])
+                pyperclip.copy(j[content]["text"])
                 print(j[content]["text"])
         #print(result)
         time.sleep(10)
